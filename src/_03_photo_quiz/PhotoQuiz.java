@@ -28,9 +28,11 @@ public class PhotoQuiz {
 		// “Copy Image Address”)
 
 		// 2. create a variable of type "Component" that will hold your image
+		Component image= https://upload.wikimedia.org/wikipedia/en/d/db/Apex_legends_cover.jpg
 
 		// 3. use the "createImage()" method below to initialize your Component
-
+			image.createImage(https://upload.wikimedia.org/wikipedia/en/d/db/Apex_legends_cover.jpg
+);
 		// 4. add the image to the quiz window
 
 		// 5. call the pack() method on the quiz window

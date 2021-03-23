@@ -10,10 +10,10 @@ public class Houses {
 		rob.moveTo(50, 500);
 		rob.setPenWidth(5);
 		rob.penDown();
-		drawHouse("small");
-		drawHouse("medium");
-		drawHouse("large");
-		drawHouse("small");
+		drawHouse("red,","small");
+		drawHouse("blue","medium");
+		drawHouse("red","large");
+		drawHouse("green","small");
 			}
 
 	private void drawHouse(String color, String answer) {
@@ -30,12 +30,14 @@ public class Houses {
 			height=250;
 		}
 		if(color.equalsIgnoreCase("red")) {
-			paint="255,0,0";
+			rob.setPenColor(255, 0, 0);
 		}
 		else if(color.equalsIgnoreCase("blue")) {
-			
+			rob.setPenColor(0,0,255);
 		}
-		rob.setRandomPenColor();
+		else {
+			rob.setPenColor(0,255,0);
+		}
 		rob.move(height);
 		rob.turn(90);
 		rob.move(25);
