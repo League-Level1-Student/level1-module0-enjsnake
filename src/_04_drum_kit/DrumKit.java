@@ -19,6 +19,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class DrumKit implements MouseListener {
@@ -60,7 +61,7 @@ public class DrumKit implements MouseListener {
 		drumLabelWithImage.addMouseListener(this);
 		// 18. Add more images to make a drumkit. Remember to add this mouse
 		// listener to each one.
-
+		
 	}
 
 	public void mouseClicked(MouseEvent e) {
@@ -79,8 +80,9 @@ public class DrumKit implements MouseListener {
 		if(drumClicked != null) {
 		// 17. ...use the playSound method to play a drum sound. Test to see if
 		// it works
-			
+			playSound("drum.wav");
 		}
+		
 	}
 
 	private JLabel createLabelImage(String fileName) throws MalformedURLException {
@@ -95,25 +97,11 @@ public class DrumKit implements MouseListener {
 	}
 
 	private void playSound(String soundFile) {
-		String path = "src/_04_drum_kit/";
-			File sound = new File(path+soundFile);
-			if (sound.exists()) {
-				new Thread(() -> {
-				try {
-					Clip clip = AudioSystem.getClip();
-					clip.open(AudioSystem.getAudioInputStream(sound));
-					clip.start();
-					Thread.sleep(clip.getMicrosecondLength()/1000);
+		JOptionPane.showMessageDialog(null, soundFile);
 				}
-				catch (Exception e) {
-					System.out.println("Could not play this sound");
-				}}).start();
-	 		}
-			else {
-				System.out.println("File does not exist");
-			}
+				
 		
-	}
+	
 
 	@Override
 	public void mousePressed(MouseEvent e) {
