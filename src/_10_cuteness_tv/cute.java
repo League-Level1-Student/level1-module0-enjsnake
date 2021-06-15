@@ -2,7 +2,17 @@ package _10_cuteness_tv;
 
 import java.net.URI;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 public class cute {
+	
+	JFrame frame=new JFrame();
+	JPanel panel=new JPanel();
+	JButton ducks=new JButton();
+	JButton frog=new JButton();
+	JButton unicorn=new JButton();
 	
 	void showDucks() {
 	     playVideo("https://www.youtube.com/watch?v=MtN1YnoL46Q");
