@@ -1,5 +1,6 @@
 package _10_cuteness_tv;
 
+import java.awt.event.ActionEvent;
 import java.net.URI;
 
 import javax.swing.JButton;
@@ -14,9 +15,37 @@ public class cute {
 	JButton frog=new JButton();
 	JButton unicorn=new JButton();
 	
+	void run(){
+		frame.add(panel);
+		frame.setVisible(true);
+		ducks.setText("Watch a video about ducks!");
+		frog.setText("Watch a video about a frog!");
+		unicorn.setText("Watch this video about a unicorn");
+		ducks.addActionListener(null);
+		frog.addActionListener(null);
+		unicorn.addActionListener(null);
+		panel.add(frog);
+		panel.add(ducks);
+		panel.add(unicorn);
+		frame.pack();
+	}
+	public void actionPerformed(ActionEvent arg0) {
+		JButton ButtonPressed = (JButton) arg0.getSource();
+		if(ButtonPressed== ducks) {
+			showDucks();
+		}
+		else if(ButtonPressed == frog) {
+			showFrog();
+		}
+		else {
+			showFluffyUnicorns();
+		}
+	
+	}
 	void showDucks() {
 	     playVideo("https://www.youtube.com/watch?v=MtN1YnoL46Q");
 	}
+	
 
 	void showFrog() {
 	     playVideo("https://www.youtube.com/watch?v=cBkWhkAZ9ds");
