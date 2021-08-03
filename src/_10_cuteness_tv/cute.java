@@ -1,13 +1,14 @@
 package _10_cuteness_tv;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.URI;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class cute {
+public class cute implements ActionListener {
 	
 	JFrame frame=new JFrame();
 	JPanel panel=new JPanel();
@@ -15,15 +16,15 @@ public class cute {
 	JButton frog=new JButton();
 	JButton unicorn=new JButton();
 	
-	void run(){
+	public void run(){
 		frame.add(panel);
 		frame.setVisible(true);
 		ducks.setText("Watch a video about ducks!");
 		frog.setText("Watch a video about a frog!");
 		unicorn.setText("Watch this video about a unicorn");
-		ducks.addActionListener(null);
-		frog.addActionListener(null);
-		unicorn.addActionListener(null);
+		ducks.addActionListener(this);
+		frog.addActionListener(this);
+		unicorn.addActionListener(this);
 		panel.add(frog);
 		panel.add(ducks);
 		panel.add(unicorn);
